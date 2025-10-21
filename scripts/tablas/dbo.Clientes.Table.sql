@@ -1,5 +1,3 @@
-scripts/tablas/
-
 -- Script para crear la tabla Clientes
 
 CREATE TABLE dbo.Clientes (
