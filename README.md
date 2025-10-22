@@ -17,23 +17,19 @@ Este repositorio contiene el diseño e implementación de un sistema de ventas p
 - `EntradaInventario`: Registro de entradas de productos al inventario.
 - `LogsUsuarios`: Auditoría de acciones realizadas por usuarios.
 
-### Roles
-- `RolClientes`: Acceso a datos de clientes.
-- `RolInventario`: Acceso a productos y entradas de inventario.
-- `RolVentas`: Acceso a ventas y detalles de venta.
 
-### Usuarios
-- `UsuarioClientes`, `UsuarioInventario`, `UsuarioVentas`: Usuarios asignados a roles específicos.
+### Roles y usuarios
+- `RolClientes`, `RolInventario`, `RolVentas`: Roles con permisos específicos.
+- `UsuarioClientes`, `UsuarioInventario`, `UsuarioVentas`: Usuarios asignados a cada rol.
 
 ---
 
-## Seguridad y auditoría
+## Seguridad y trazabilidad
 
-El sistema implementa:
 - Claves primarias y foráneas para integridad referencial.
-- Valores por defecto para fechas y cantidades.
 - Roles y usuarios para control de acceso.
-- Tabla de auditoría (`LogsUsuarios`) para registrar acciones.
+- Triggers para auditoría y actualización automática.
+- Tabla `LogsUsuarios` para registrar acciones del sistema.
 
 ---
 
@@ -41,23 +37,26 @@ El sistema implementa:
 
 - SQL Server 2019 o superior
 - SSMS (SQL Server Management Studio)
-- Permisos para crear usuarios, roles y asignar logins
+- Permisos para crear usuarios, roles y triggers
 
 ---
 
 ## Cómo usar
 
-1. Ejecuta los scripts en orden:
+1. Ejecuta los scripts en este orden:
    - Tablas
    - Roles
    - Usuarios
-   - (Opcional) Triggers, inserciones y permisos
+   - Permisos
+   - Triggers
+   - Inserciones (opcional)
 
-2. Verifica que los usuarios estén correctamente asignados a sus roles.
+2. Verifica que los triggers estén activos y que los roles tengan los permisos adecuados.
 
-3. Realiza pruebas de inserción, consulta y auditoría.
+3. Realiza pruebas de inserción, venta y entrada de inventario para validar auditoría y actualización de stock.
 
 ---
+
 
 ## Autora
 
